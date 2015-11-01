@@ -13,3 +13,10 @@ brewControllers.controller('TopBrewListCtrl', ['$scope', '$http', '$routeParams'
 
 }]);
 
+brewControllers.controller('CategoryListCtrl', ['$scope', '$http', '$routeParams', function ($scope, $http, $routeParams) {
+
+  $http.get('brew/categories').success(function (data) {
+    $scope.categories = data;
+  });
+
+}]);

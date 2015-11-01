@@ -26,4 +26,11 @@ public class BrewWebResource {
         return new ResponseEntity<String>(bestBeers, HttpStatus.OK);
     }
 
+    @RequestMapping(produces = "application/json;charset=UTF-8", value = "/brew/categories", method = RequestMethod.GET)
+    public ResponseEntity<String> getAllCategories() {
+        String bestBeers = brewService.getAllCategories();
+
+        return new ResponseEntity<String>(bestBeers, HttpStatus.OK);
+    }
+
 }

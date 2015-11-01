@@ -14,4 +14,8 @@ public class BrewService {
         return fileUtil.readStringFromFile("beers.json");
     }
 
+    public String getAllCategories() {
+        return fileUtil.readStringFromFile("categories.json");
+    }
+
 }

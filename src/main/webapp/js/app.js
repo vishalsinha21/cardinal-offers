@@ -18,6 +18,10 @@ brewApp.config(['$routeProvider',
           templateUrl: 'brew-details.html',
           controller: 'TopBrewListCtrl'
         }).
+        when('/category', {
+          templateUrl: 'categories.html',
+          controller: 'CategoryListCtrl'
+        }).
         otherwise({
           redirectTo: '/brews'
         });
