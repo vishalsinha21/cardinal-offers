@@ -12,12 +12,25 @@
 </head>
 
 <body class="container">
-    <div class="row text-center">
+
+<div class="row text-center">
+    <div>
         <h1>Elixir</h1>
     </div>
-    <hr/>
+</div>
 
-    <div ng-view></div>
+<div class="row text-center">
+    <ul class="nav nav-pills nav-justified">
+        <li role="presentation"><a href="#brew"><h4>Top Brews</h4></a></li>
+        <li role="presentation"><a href="#category"><h4>Categories</h4></a></li>
+        <li role="presentation"><a href="#review"><h4>Add Review</h4></a></li>
+    </ul>
+</div>
+
+<hr/>
+
+<div ng-view></div>
+
 </body>
 
 </html>

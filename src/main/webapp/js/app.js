@@ -22,6 +22,10 @@ brewApp.config(['$routeProvider',
           templateUrl: 'categories.html',
           controller: 'CategoryListCtrl'
         }).
+        when('/review', {
+          templateUrl: 'review.html',
+          controller: 'CategoryListCtrl'
+        }).
         otherwise({
           redirectTo: '/brews'
         });
