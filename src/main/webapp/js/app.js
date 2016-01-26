@@ -2,35 +2,19 @@
 
 /* App Module */
 
-var brewApp = angular.module('brewApp', [
+var cardinalApp = angular.module('cardinalApp', [
   'ngRoute',
-  'brewControllers'
+  'offerControllers'
 ]);
 
-brewApp.config(['$routeProvider',
+cardinalApp.config(['$routeProvider',
   function ($routeProvider) {
     $routeProvider.
-        when('/brews', {
-          templateUrl: 'main.html',
-          controller: 'TopBrewListCtrl'
-        }).
-        when('/brews/:id', {
-          templateUrl: 'brew-details.html',
-          controller: 'TopBrewListCtrl'
-        }).
-        when('/category', {
-          templateUrl: 'categories.html',
-          controller: 'CategoryListCtrl'
-        }).
-        when('/review', {
-          templateUrl: 'review.html',
-          controller: 'CategoryListCtrl'
-        }).
         when('/offers', {
           templateUrl: 'offers.html',
           controller: 'GeoCtrl'
         }).
         otherwise({
-          redirectTo: '/brews'
+          redirectTo: '/offers'
         });
   }]);

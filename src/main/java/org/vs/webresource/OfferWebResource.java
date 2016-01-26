@@ -22,20 +22,6 @@ public class OfferWebResource {
         this.offerService = offerService;
     }
 
-    @RequestMapping(produces = "application/json;charset=UTF-8", value = "/brew/best", method = RequestMethod.GET)
-    public ResponseEntity<String> getBestBeers() {
-        String bestBeers = offerService.getBestBeers();
-
-        return new ResponseEntity<String>(bestBeers, HttpStatus.OK);
-    }
-
-    @RequestMapping(produces = "application/json;charset=UTF-8", value = "/brew/categories", method = RequestMethod.GET)
-    public ResponseEntity<String> getAllCategories() {
-        String bestBeers = offerService.getAllCategories();
-
-        return new ResponseEntity<String>(bestBeers, HttpStatus.OK);
-    }
-
     @RequestMapping(produces = "application/json;charset=UTF-8", value = "/brew/offers", method = RequestMethod.GET)
     public ResponseEntity<List<Offer>> getAllOffers(
             @RequestParam(value = "lat") String latitude,

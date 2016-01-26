@@ -24,14 +24,6 @@ public class OfferService {
 
     private static Map<String, Offer> offersMap = new HashMap();
 
-    public String getBestBeers() {
-        return fileUtil.readStringFromFile("beers.json");
-    }
-
-    public String getAllCategories() {
-        return fileUtil.readStringFromFile("categories.json");
-    }
-
     public List<Offer> getOffers(String latitude, String longitude) {
         JsonNode restaurants = googlePlacesDao.getRestaurants(latitude, longitude);
         Iterator<JsonNode> results = restaurants.get("results").getElements();
@@ -39,11 +31,11 @@ public class OfferService {
 
         List<Offer> offers = new ArrayList();
 
-        while(results.hasNext()) {
+        while (results.hasNext()) {
             JsonNode next = results.next();
             String place_id = next.get("place_id").asText();
 
-            if(offersMap.containsKey(place_id)) {
+            if (offersMap.containsKey(place_id)) {
                 offers.add(offersMap.get(place_id));
             }
         }
