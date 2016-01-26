@@ -10,13 +10,17 @@ var cardinalApp = angular.module('cardinalApp', [
 cardinalApp.config(['$routeProvider',
   function ($routeProvider) {
     $routeProvider.
+        when('/restaurants', {
+          templateUrl: 'restaurants.html',
+          controller: 'RestaurantCtrl'
+        }).
         when('/offers', {
           templateUrl: 'offers.html',
           controller: 'GeoCtrl'
         }).
-        when('/restaurants', {
-          templateUrl: 'restaurants.html',
-          controller: 'RestaurantCtrl'
+        when('/weather', {
+          templateUrl: 'weather.html',
+          controller: 'WeatherCtrl'
         }).
         otherwise({
           redirectTo: '/restaurants'

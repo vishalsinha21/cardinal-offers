@@ -1,0 +1,33 @@
+<div class="col-md-4 col-md-offset-4 row">
+    <div class="panel panel-primary">
+        <div class="panel-heading">
+            <h3 class="panel-title">{{weather.name}}</h3>
+        </div>
+        <div>
+            <table>
+                <tr>
+                    <td class="col-md-1"><img ng-src="http://openweathermap.org/img/w/{{weather.weather[0].icon}}.png"
+                             class="img-rounded"> <br> {{weather.weather[0].main}}</td>
+                    <td class="col-md-3">
+                        <table>
+                            <tr>
+                                <td><h5>Temperature: {{weather.main.temp}} °C</h5></td>
+                            </tr>
+                            <tr>
+                                <td><h5>Pressure: {{weather.main.pressure}} hpa</h5></td>
+                            </tr>
+                            <tr>
+                                <td><h5>Humidity: {{weather.main.humidity}}%</h5></td>
+                            </tr>
+                            <tr>
+                                <td><h5>Country: {{weather.sys.country}}</h5></td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</div>
+
+
