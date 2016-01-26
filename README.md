@@ -1,6 +1,16 @@
-Brew
-------
+Cardinal Offers
+----------------
 
-Drink Journal and Rating App
+Location specific restaurant offers
 
-Angular showcase with mock responses
+First time setup:
+- clone project
+- mvn clean install
+- bower install
+- mvn jetty:run to start app
+
+
+Restaurants are fetched in real time but offers data is mocked up
+
+To make it work add mock up data to offersMap in OfferService, key should be google place_id
+
