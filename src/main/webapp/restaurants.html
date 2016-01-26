@@ -1,0 +1,26 @@
+
+<div class="col-md-8 col-md-offset-2 row text-center">
+    <div class="panel panel-info" ng-repeat="restaurant in offers.results">
+        <div class="panel-heading">
+            <h3 class="panel-title">{{restaurant.name}}</h3>
+        </div>
+        <div>
+            <table class="table">
+                <tr>
+                    <td>Place Id: {{restaurant.place_id}}</td>
+                </tr>
+                <tr>
+                    <td>Vicinity: {{restaurant.vicinity}}</td>
+                </tr>
+                <tr>
+                    <td>Latitude: {{restaurant.geometry.location.lat}}</td>
+                </tr>
+                <tr>
+                    <td>Longitude: {{restaurant.geometry.location.lng}}</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</div>
+
+

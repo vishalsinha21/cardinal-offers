@@ -56,4 +56,9 @@ public class OfferService {
         offersMap.put("ChIJN44sqlPlDDkRKoZmyIERrCE", offer4);
         offersMap.put("ChIJsaVEwLL6DDkRJ4bWS3ZDXl4", offer5);
     }
+
+    public String getNearbyRestaurants(String latitude, String longitude) {
+        return googlePlacesDao.getRestaurants(latitude, longitude).toString();
+    }
+    
 }

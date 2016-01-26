@@ -14,7 +14,11 @@ cardinalApp.config(['$routeProvider',
           templateUrl: 'offers.html',
           controller: 'GeoCtrl'
         }).
+        when('/restaurants', {
+          templateUrl: 'restaurants.html',
+          controller: 'RestaurantCtrl'
+        }).
         otherwise({
-          redirectTo: '/offers'
+          redirectTo: '/restaurants'
         });
   }]);
