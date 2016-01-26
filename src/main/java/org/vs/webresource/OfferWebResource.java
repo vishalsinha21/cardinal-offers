@@ -2,35 +2,47 @@ package org.vs.webresource;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
-import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
-import org.vs.service.BrewService;
+import org.vs.domain.Offer;
+import org.vs.service.OfferService;
+
+import java.util.List;
 
 @RestController
-public class BrewWebResource {
+public class OfferWebResource {
 
-    BrewService brewService;
+    OfferService offerService;
 
     @Autowired
-    public BrewWebResource(BrewService brewService) {
-        this.brewService = brewService;
+    public OfferWebResource(OfferService offerService) {
+        this.offerService = offerService;
     }
 
     @RequestMapping(produces = "application/json;charset=UTF-8", value = "/brew/best", method = RequestMethod.GET)
     public ResponseEntity<String> getBestBeers() {
-        String bestBeers = brewService.getBestBeers();
+        String bestBeers = offerService.getBestBeers();
 
         return new ResponseEntity<String>(bestBeers, HttpStatus.OK);
     }
 
     @RequestMapping(produces = "application/json;charset=UTF-8", value = "/brew/categories", method = RequestMethod.GET)
     public ResponseEntity<String> getAllCategories() {
-        String bestBeers = brewService.getAllCategories();
+        String bestBeers = offerService.getAllCategories();
 
         return new ResponseEntity<String>(bestBeers, HttpStatus.OK);
+    }
+
+    @RequestMapping(produces = "application/json;charset=UTF-8", value = "/brew/offers", method = RequestMethod.GET)
+    public ResponseEntity<List<Offer>> getAllOffers(
+            @RequestParam(value = "lat") String latitude,
+            @RequestParam(value = "long") String longitude) {
+
+        List<Offer> offers = offerService.getOffers(latitude, longitude);
+        return new ResponseEntity<List<Offer>>(offers, HttpStatus.OK);
     }
 
 }

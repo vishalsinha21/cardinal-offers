@@ -1,0 +1,19 @@
+
+<div class="col-md-6 col-md-offset-3 row text-center">
+    <div class="panel panel-primary" ng-repeat="offer in offers">
+        <div class="panel-heading">
+            <h3 class="panel-title">{{offer.placeName}}</h3>
+        </div>
+        <div>
+            <table class="table">
+                <tr>
+                    <td><h4><img ng-src="https://maps.gstatic.com/mapfiles/place_api/icons/restaurant-71.png"
+                                 class="img-thumbnail"></h4></td>
+                    <td><h4>{{offer.offerType}} <br> {{offer.cardType}}</h4></td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</div>
+
+
