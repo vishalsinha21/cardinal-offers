@@ -49,12 +49,22 @@ public class OfferService {
         Offer offer3 = new Offer("Cinnamon Kitchen", "10% Discount", "HDFC Regalia Credit Card");
         Offer offer4 = new Offer("Pind Balluchi", "26% Republic Day Discount", "SBI Silver Debit Card");
         Offer offer5 = new Offer("Urban Punjab", "10% Discount", "Paytm Wallet");
+        Offer offer6 = new Offer("Chicken Mahal", "15% Discount", "HDFC Platinum Debit Card");
+        Offer offer7 = new Offer("Moti Mahal Deluxe", "25% Discount", "ICICI Gold Credit Card");
+        Offer offer8 = new Offer("The Pizza Point", "10% Discount", "HDFC Regalia Credit Card");
+        Offer offer9 = new Offer("Desi Tadka", "26% Republic Day Discount", "SBI Silver Debit Card");
+        Offer offer10 = new Offer("Hurry Curry", "10% Discount", "Paytm Wallet");
 
         offersMap.put("ChIJkaqqxjr7DDkRQZKu3p8pm4o", offer1);
         offersMap.put("ChIJI9vLvLT6DDkR6IxankeLUQQ", offer2);
         offersMap.put("ChIJmYyN6rL6DDkR0nbVaUKZ9Zw", offer3);
         offersMap.put("ChIJN44sqlPlDDkRKoZmyIERrCE", offer4);
         offersMap.put("ChIJsaVEwLL6DDkRJ4bWS3ZDXl4", offer5);
+        offersMap.put("ChIJkVfqvxACDTkR5x25TVltbDY", offer6);
+        offersMap.put("ChIJTb3B5aQDDTkR27XFJhox7EI", offer7);
+        offersMap.put("ChIJp7ffCEIDDTkRrYV6vGk0a_o", offer8);
+        offersMap.put("ChIJS8IqEj0DDTkRyVw6fp9JyD4", offer9);
+        offersMap.put("ChIJEXGjyzoDDTkR94LXm3FRiQk", offer10);
     }
 
     public String getNearbyRestaurants(String latitude, String longitude) {
