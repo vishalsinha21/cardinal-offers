@@ -1,26 +1,23 @@
+<div class="col-md-10 col-md-offset-1 row">
+    <div>
+        <table class="table table-striped">
+            <tbody class="text-info">
+            <td><h4>Restaurant</h4></td>
+            <td><h4>Vicinity</h4></td>
+            <td><h4>Latitude, Longitude</h4></td>
+            <td><h4>Place Id</h4></td>
+            </tbody>
 
-<div class="col-md-8 col-md-offset-2 row text-center">
-    <div class="panel panel-info" ng-repeat="restaurant in offers.results">
-        <div class="panel-heading">
-            <h3 class="panel-title">{{restaurant.name}}</h3>
-        </div>
-        <div>
-            <table class="table">
-                <tr>
-                    <td>Place Id: {{restaurant.place_id}}</td>
-                </tr>
-                <tr>
-                    <td>Vicinity: {{restaurant.vicinity}}</td>
-                </tr>
-                <tr>
-                    <td>Latitude: {{restaurant.geometry.location.lat}}</td>
-                </tr>
-                <tr>
-                    <td>Longitude: {{restaurant.geometry.location.lng}}</td>
-                </tr>
-            </table>
-        </div>
+            <tr ng-repeat="restaurant in offers.results">
+                <td><h4>{{restaurant.name}}</h4></td>
+                <td>{{restaurant.vicinity}}</td>
+                <td>{{restaurant.geometry.location.lat | limitTo:8}}, {{restaurant.geometry.location.lng | limitTo:8}}
+                </td>
+                <td>
+                    <small>{{restaurant.place_id}}</small>
+                </td>
+            </tr>
+        </table>
     </div>
 </div>
-
 

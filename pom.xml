@@ -171,20 +171,6 @@
                     <password>app</password>
                 </configuration>
             </plugin>
-            <!-- In memory DB plugin -->
-            <plugin>
-                <groupId>com.btmatthews.maven.plugins.inmemdb</groupId>
-                <artifactId>inmemdb-maven-plugin</artifactId>
-                <version>1.4.3</version>
-                <configuration>
-                    <monitorPort>11527</monitorPort>
-                    <monitorKey>inmemdb</monitorKey>
-                    <type>derby</type>
-                    <database>testdb</database>
-                    <username>app</username>
-                    <password>app</password>
-                </configuration>
-            </plugin>
             <!-- Jetty runner -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
