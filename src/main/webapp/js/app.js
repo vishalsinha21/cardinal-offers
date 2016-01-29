@@ -14,6 +14,10 @@ cardinalApp.config(['$routeProvider',
           templateUrl: 'restaurants.html',
           controller: 'RestaurantCtrl'
         }).
+        when('/restaurant/:id', {
+          templateUrl: 'restaurant-details.html',
+          controller: 'RestaurantDetailsCtrl'
+        }).
         when('/offers', {
           templateUrl: 'offers.html',
           controller: 'GeoCtrl'

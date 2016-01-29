@@ -70,5 +70,12 @@ public class OfferService {
     public String getNearbyRestaurants(String latitude, String longitude) {
         return googlePlacesDao.getRestaurants(latitude, longitude).toString();
     }
-    
+
+    public String getRestaurantDetails(String placeId) {
+        return googlePlacesDao.getRestaurantDetails(placeId).toString();
+    }
+
+    public String getPhoto(String photoRef) {
+        return googlePlacesDao.getPhoto(photoRef);
+    }
 }

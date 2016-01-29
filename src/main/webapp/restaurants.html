@@ -8,15 +8,18 @@
             <td><h4>Place Id</h4></td>
             </tbody>
 
+
             <tr ng-repeat="restaurant in offers.results">
-                <td><h4>{{restaurant.name}}</h4></td>
+                <td><a href="#/restaurant/{{restaurant.place_id}}"><h5>{{restaurant.name}}</h5></a></td>
                 <td>{{restaurant.vicinity}}</td>
-                <td>{{restaurant.geometry.location.lat | limitTo:8}}, {{restaurant.geometry.location.lng | limitTo:8}}
+                <td>{{restaurant.geometry.location.lat | limitTo:8}}, {{restaurant.geometry.location.lng |
+                    limitTo:8}}
                 </td>
                 <td>
                     <small>{{restaurant.place_id}}</small>
                 </td>
             </tr>
+
         </table>
     </div>
 </div>

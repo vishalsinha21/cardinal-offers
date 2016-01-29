@@ -1,0 +1,15 @@
+<div>
+    <div class="row">
+        <div class="col-md-6 vcenter">
+            <img ng-src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference={{restaurant.photos[0].photo_reference}}&key=authkey" class="img-circle">
+        </div><!--
+    --><div class="col-md-6 vcenter">
+        <h3>{{restaurant.name}}</h3>
+        <h5>Address: {{restaurant.formatted_address}}</h5>
+        <h5>Rating: {{restaurant.rating}}</h5>
+        <h5>Website: {{restaurant.website}}</h5>
+        <h5><a href={{restaurant.url}} target="_blank">See it on google maps</a></h5>
+    </div>
+    </div>
+
+</div>

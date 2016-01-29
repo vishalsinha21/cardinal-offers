@@ -20,4 +20,16 @@ public class GooglePlacesDao {
         return restTemplate.getForObject(url, JsonNode.class);
     }
 
+    public JsonNode getRestaurantDetails(String placeId) {
+        String template = "https://maps.googleapis.com/maps/api/place/details/json?placeid=%s&key=authkey";
+        String url = String.format(template, placeId);
+        return restTemplate.getForObject(url, JsonNode.class);
+    }
+
+    public String getPhoto(String photoRef) {
+        String template = "https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference=%s&key=authkey";
+        String url = String.format(template, photoRef);
+        return restTemplate.getForObject(url, String.class);
+    }
+
 }
