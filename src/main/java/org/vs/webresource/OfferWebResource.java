@@ -23,7 +23,7 @@ public class OfferWebResource {
         this.offerService = offerService;
     }
 
-    @RequestMapping(produces = "application/json;charset=UTF-8", value = "/brew/offers", method = RequestMethod.GET)
+    @RequestMapping(produces = "application/json;charset=UTF-8", value = "/cardinal/offers", method = RequestMethod.GET)
     public ResponseEntity<List<Offer>> getAllOffers(
             @RequestParam(value = "lat") String latitude,
             @RequestParam(value = "long") String longitude) {
@@ -32,7 +32,7 @@ public class OfferWebResource {
         return new ResponseEntity<List<Offer>>(offers, HttpStatus.OK);
     }
 
-    @RequestMapping(produces = "application/json;charset=UTF-8", value = "/brew/restaurants", method = RequestMethod.GET)
+    @RequestMapping(produces = "application/json;charset=UTF-8", value = "/cardinal/restaurants", method = RequestMethod.GET)
     public ResponseEntity<String> getNearbyRestaurants(
             @RequestParam(value = "lat") String latitude,
             @RequestParam(value = "long") String longitude) {
@@ -41,7 +41,7 @@ public class OfferWebResource {
         return new ResponseEntity<String>(offers, HttpStatus.OK);
     }
 
-    @RequestMapping(produces = "application/json;charset=UTF-8", value = "/brew/restaurant/{placeId}", method = RequestMethod.GET)
+    @RequestMapping(produces = "application/json;charset=UTF-8", value = "/cardinal/restaurant/{placeId}", method = RequestMethod.GET)
     public ResponseEntity<String> getRestaurantDetails(
             @PathVariable String placeId) {
 
@@ -49,7 +49,7 @@ public class OfferWebResource {
         return new ResponseEntity<String>(offers, HttpStatus.OK);
     }
 
-    @RequestMapping(produces = "application/json;charset=UTF-8", value = "/brew/photo/{photoRef}", method = RequestMethod.GET)
+    @RequestMapping(produces = "application/json;charset=UTF-8", value = "/cardinal/photo/{photoRef}", method = RequestMethod.GET)
     public ResponseEntity<String> getPhoto(
             @PathVariable String photoRef) {
 

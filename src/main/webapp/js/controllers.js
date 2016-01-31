@@ -10,7 +10,7 @@ offerControllers.controller('GeoCtrl', ['$scope', '$http', 'geolocation', functi
     $scope.coords = {lat:data.coords.latitude, long:data.coords.longitude};
 
     $http({
-      url: 'brew/offers',
+      url: 'cardinal/offers',
       method: "GET",
       params: {lat: $scope.coords.lat, long: $scope.coords.long}
     }).success(function (data) {
@@ -27,7 +27,7 @@ offerControllers.controller('RestaurantCtrl', ['$scope', '$http', 'geolocation',
     $scope.coords = {lat:data.coords.latitude, long:data.coords.longitude};
 
     $http({
-      url: 'brew/restaurants',
+      url: 'cardinal/restaurants',
       method: "GET",
       params: {lat: $scope.coords.lat, long: $scope.coords.long}
     }).success(function (data) {
@@ -59,7 +59,7 @@ offerControllers.controller('WeatherCtrl', ['$scope', '$http', 'geolocation', fu
 offerControllers.controller('RestaurantDetailsCtrl', ['$scope', '$http', '$routeParams', function ($scope, $http, $routeParams) {
 
     $http({
-      url: 'brew/restaurant/'+$routeParams.id,
+      url: 'cardinal/restaurant/'+$routeParams.id,
       method: "GET"
     }).success(function (data) {
       $scope.restaurant = data.result;

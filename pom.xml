@@ -2,7 +2,7 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <groupId>org.test</groupId>
-    <artifactId>brew</artifactId>
+    <artifactId>cardinal</artifactId>
     <packaging>war</packaging>
     <version>1.0-SNAPSHOT</version>
     <name>Brew Maven Webapp</name>
@@ -147,7 +147,7 @@
     </dependencies>
 
     <build>
-        <finalName>brew</finalName>
+        <finalName>cardinal</finalName>
         <plugins>
             <!-- Jetty -->
             <plugin>
