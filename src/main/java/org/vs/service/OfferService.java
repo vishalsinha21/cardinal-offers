@@ -1,12 +1,14 @@
 package org.vs.service;
 
 import org.codehaus.jackson.JsonNode;
+import org.codehaus.jackson.map.ObjectMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.vs.dao.GooglePlacesDao;
 import org.vs.domain.Offer;
 import org.vs.util.FileUtil;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Iterator;
@@ -26,6 +28,7 @@ public class OfferService {
 
     public List<Offer> getOffers(String latitude, String longitude) {
         JsonNode restaurants = googlePlacesDao.getRestaurants(latitude, longitude);
+        printResponse(restaurants);
         Iterator<JsonNode> results = restaurants.get("results").getElements();
         populateOffersMap();
 
@@ -68,14 +71,28 @@ public class OfferService {
     }
 
     public String getNearbyRestaurants(String latitude, String longitude) {
-        return googlePlacesDao.getRestaurants(latitude, longitude).toString();
+        JsonNode restaurants = googlePlacesDao.getRestaurants(latitude, longitude);
+        printResponse(restaurants);
+        return restaurants.toString();
     }
 
     public String getRestaurantDetails(String placeId) {
-        return googlePlacesDao.getRestaurantDetails(placeId).toString();
+        JsonNode restaurantDetails = googlePlacesDao.getRestaurantDetails(placeId);
+        printResponse(restaurantDetails);
+        return restaurantDetails.toString();
     }
 
     public String getPhoto(String photoRef) {
         return googlePlacesDao.getPhoto(photoRef);
+    }
+
+    private void printResponse(JsonNode node) {
+        try {
+            ObjectMapper mapper = new ObjectMapper();
+            String asString = mapper.writerWithDefaultPrettyPrinter().writeValueAsString(node);
+            System.out.println("Response:\n" + asString);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 }
